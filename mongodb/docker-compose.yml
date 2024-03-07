@@ -1,14 +1,15 @@
 version: '3.8'
 services:
   mongodb:
-        image: 'mongo:4.4'
-        ports:
-            - '27017:27017'
-        restart: always
-        environment:
-            MONGO_INITDB_DATABASE: 'pfm'
-        volumes:
-            - 'mongo-local:/data/db'
+    container_name: mongo_local
+    image: 'mongo:4.4'
+    ports:
+      - '27017:27017'
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: 'pfm'
+    volumes:
+      - 'mongo-local:/data/db'
 volumes:
   mongo-local:
     driver: local
